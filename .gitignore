@@ -1,0 +1,6 @@
+.idea
+his_env
+.venv
+env
+conv_history_env
+__pycache__

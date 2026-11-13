@@ -1,0 +1,27 @@
+fastapi==0.115.13
+uvicorn==0.33.0
+elasticsearch==8.17.0
+python-multipart
+ibm-cloud-sdk-core
+Pillow
+typing_extensions
+requests
+redis
+nano
+httpx
+asyncio
+python-dotenv
+
+# doc_ingest : reading attached documents out of minio and into elasticsearch.
+# NOTE : PyMuPDF is AGPL-3.0 (or a commercial licence from Artifex) -- check
+# that is acceptable before distributing this service.
+minio==7.2.20
+# 1.26.5 is the last PyMuPDF for Python 3.9, which the CI venv runs. Its wheel
+# is abi3, so the same one installs in the 3.10 image.
+PyMuPDF==1.26.5
+python-docx==1.2.0
+# OCR for scanned pages. Both drive the tesseract program the Dockerfile
+# installs; doc_ingest prefers tesserocr and falls back to pytesseract, which is
+# what runs on Windows, where this version has no wheel and pip would fail on it.
+pytesseract==0.3.13
+tesserocr==2.8.0; sys_platform == "linux"
